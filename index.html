@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>STAYDROP 메인페이지 데모 2종 · 탱탱소프트</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  :root { --ink:#16181d; --sub:#5b6270; --line:#e4e6ea; --bg:#f6f6f3; }
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif; color:var(--ink); background:var(--bg); -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:1280px; margin:0 auto; padding:72px 24px 96px; }
+  .eyebrow { font-size:12px; letter-spacing:.24em; font-weight:600; color:var(--sub); }
+  h1 { margin-top:16px; font-size:clamp(28px,4vw,44px); font-weight:300; letter-spacing:-.03em; line-height:1.25; text-wrap:balance; }
+  h1 b { font-weight:800; }
+  .lead { margin-top:16px; max-width:60ch; color:var(--sub); line-height:1.75; font-size:15px; }
+  .grid { margin-top:56px; display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+  a.card { display:flex; flex-direction:column; background:#fff; color:inherit; text-decoration:none; border:1px solid var(--line); transition:transform .3s, box-shadow .3s; }
+  a.card:hover, a.card:focus-visible { transform:translateY(-6px); box-shadow:0 24px 48px rgba(22,24,29,.12); outline:none; }
+  .thumb { aspect-ratio:16/10; overflow:hidden; background:#111; }
+  .thumb img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s; }
+  a.card:hover .thumb img { transform:scale(1.05); }
+  .body { padding:24px 24px 28px; display:flex; flex-direction:column; gap:10px; flex:1; }
+  .tag { font-size:11px; letter-spacing:.2em; font-weight:700; color:var(--sub); }
+  h2 { font-size:21px; font-weight:700; letter-spacing:-.02em; }
+  .body p { font-size:14px; line-height:1.7; color:var(--sub); }
+  .ref { margin-top:auto; padding-top:16px; border-top:1px solid var(--line); font-size:12px; color:var(--sub); word-break:break-all; }
+  .go { font-size:13px; font-weight:700; }
+  .studio { display:flex; justify-content:space-between; align-items:center; gap:16px; padding-bottom:24px; margin-bottom:48px; border-bottom:1px solid var(--line); font-size:13px; color:var(--sub); }
+  .studio a { color:var(--ink); font-weight:700; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:1px; transition:opacity .3s; }
+  .studio a:hover { opacity:.6; }
+  .credit { margin-top:56px; padding-top:24px; border-top:1px solid var(--line); font-size:13px; color:var(--sub); }
+  .credit a { color:var(--ink); font-weight:700; text-decoration:none; }
+  .credit a:hover { text-decoration:underline; }
+  .note { margin-top:48px; font-size:13px; color:var(--sub); line-height:1.8; }
+  @media (max-width:900px){ .grid{ grid-template-columns:1fr; } .wrap{ padding:48px 16px 72px; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="studio">
+    <span>Designed &amp; developed by <a href="https://tengtengsoft.kr" target="_blank" rel="noopener">탱탱소프트</a></span>
+    <a href="https://tengtengsoft.kr" target="_blank" rel="noopener">tengtengsoft.kr ↗</a>
+  </div>
+  <p class="eyebrow">STAYDROP · MAIN PAGE DEMO</p>
+  <h1>호텔 어메니티 자판기 브랜드 <b>메인페이지 데모 2종</b></h1>
+  <p class="lead">가상의 호텔 어메니티 자판기 브랜드 STAYDROP의 메인페이지를 두 가지 컨셉으로 구성한 탱탱소프트 제작 샘플입니다. 업체명·연락처·설치 호텔은 모두 가상이며, 이미지와 영상은 생성한 것입니다.</p>
+
+  <div class="grid">
+    <a class="card" href="a-magazine/">
+      <div class="thumb"><img src="assets/img/lobby_day.webp" alt="밝은 로비에 놓인 자판기"></div>
+      <div class="body">
+        <span class="tag">DEMO A</span>
+        <h2>매거진 화보형</h2>
+        <p>흰 배경과 네이비 한 색, 얇고 굵은 글자의 대비. 영상 히어로, 고정 구간, 화보 그리드, 스크롤로 돌려 보는 제품 필름.</p>
+        <span class="go">시안 보기 →</span>
+      </div>
+    </a>
+    <a class="card" href="b-editorial/">
+      <div class="thumb"><img src="assets/img/elevator.webp" alt="엘리베이터 홀의 자판기"></div>
+      <div class="body">
+        <span class="tag">DEMO B</span>
+        <h2>조용한 럭셔리 에디토리얼</h2>
+        <p>세로 가이드라인 4컬럼 그리드, 느린 줌의 키 비주얼, 넓은 행간. 사진과 여백으로 고급감을 만드는 구성.</p>
+        <span class="go">시안 보기 →</span>
+      </div>
+    </a>
+  </div>
+
+  <p class="note">데스크톱 크롬 기준으로 확인하시는 것을 권장합니다. 메뉴는 이동 없이 표시만 됩니다.</p>
+  <p class="credit">제작 · <a href="https://tengtengsoft.kr" target="_blank" rel="noopener">탱탱소프트 (TengTengSoft)</a></p>
+</main>
+</body>
+</html>

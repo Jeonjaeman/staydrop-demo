@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>스테이드롭 | 호텔 어메니티 자판기 무상 설치 · 직영 운영</title>
+<meta name="description" content="스테이드롭은 호텔·숙박시설에 어메니티 자동판매기를 설치비 0원으로 설치하고 직영으로 운영합니다.">
+<script>
+/* 연출용 초기 숨김은 이 클래스가 붙은 뒤에만 적용된다. main.js가 준비되지 않으면 3초 뒤 해제한다. */
+(function(){var d=document.documentElement;d.classList.add('js');
+if(!window.matchMedia||!matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('anim');
+setTimeout(function(){if(!window.__sdReady){d.classList.remove('anim');}},3000);}})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-arr" viewBox="0 0 20 8"><path d="M0 4h19M15.5.5 19 4l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2 2A15.5 15.5 0 0 1 4.500 5.5a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 16 16"><path d="M8 0v16M0 8h16" fill="none" stroke="currentColor" stroke-width="1"/></symbol>
+</svg>
+
+<!-- ───────── Header ───────── -->
+<header class="hdr" id="hdr">
+  <div class="logo" aria-label="스테이드롭 STAYDROP">
+    <span class="logo__mark">SD</span>
+    <span class="logo__txt">STAYDROP AMENITY</span>
+  </div>
+  <nav class="gnav" aria-label="주 메뉴">
+    <button type="button" class="gnav__item">Service</button>
+    <button type="button" class="gnav__item">Machine</button>
+    <button type="button" class="gnav__item">Amenities</button>
+    <button type="button" class="gnav__item">Plan</button>
+    <button type="button" class="gnav__item">Story</button>
+    <button type="button" class="gnav__item">Contact</button>
+  </nav>
+  <button type="button" class="hdr__burger" id="burger" aria-expanded="false" aria-controls="mnav">Menu</button>
+</header>
+
+<div class="mnav" id="mnav" aria-hidden="true">
+  <button type="button" class="mnav__close" id="mnavClose">Close</button>
+  <ul class="mnav__list">
+    <li><button type="button"><span class="en">Service</span><span>서비스 소개</span></button></li>
+    <li><button type="button"><span class="en">Machine</span><span>어메니티 자판기</span></button></li>
+    <li><button type="button"><span class="en">Amenities</span><span>상품 구성</span></button></li>
+    <li><button type="button"><span class="en">Plan</span><span>계약 모델</span></button></li>
+    <li><button type="button"><span class="en">Story</span><span>브랜드 이야기</span></button></li>
+    <li><button type="button"><span class="en">Contact</span><span>상담 문의</span></button></li>
+  </ul>
+  <p class="mnav__tel en">02-555-0123</p>
+</div>
+
+<main>
+
+<!-- ───────── 1. KV ───────── -->
+<section class="kv" id="kv" aria-roledescription="carousel" aria-label="스테이드롭 소개">
+  <div class="kv__slides">
+
+    <article class="kv__slide kv__slide--first is-active" data-dur="11500">
+      <div class="kv__media"><div class="kv__bg"><img src="../assets/img/lobby_day.webp" alt="밝은 트래버틴 로비에 놓인 스테이드롭 어메니티 자판기" fetchpriority="high"></div></div>
+      <div class="kv__shade"></div>
+      <div class="kv__inner">
+        <div class="kv__mani">
+          <div class="kv__mani-in">
+            <p class="kv__mani-en en">Hospitality,<br>quietly served.</p>
+            <p class="kv__mani-ko">일회용품이 사라진 객실.<br>그 빈자리를 채우는 가장 조용한 방법을 생각합니다.<br>로비 한편에서, 필요한 순간에만<br>필요한 것을 건넵니다.</p>
+          </div>
+        </div>
+        <div class="kv__copy">
+          <h1 class="kv__ttl en">Amenity Vending</h1>
+          <p class="kv__desc">설치비 0원, 직영으로 운영하는<br>호텔 어메니티 자판기</p>
+          <button type="button" class="more more--w"><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i><span>View more</span></button>
+        </div>
+      </div>
+    </article>
+
+    <article class="kv__slide" data-dur="6000">
+      <div class="kv__media"><div class="kv__bg"><img src="../assets/img/lobby_night.webp" alt="어두운 로비 야경 속 어메니티 자판기"></div></div>
+      <div class="kv__shade"></div>
+      <div class="kv__inner">
+        <div class="kv__copy">
+          <h2 class="kv__ttl en">Full-Care Operation</h2>
+          <p class="kv__desc">상품 구성부터 재고 보충, 기기 점검까지<br>스테이드롭이 직접 방문해 처리합니다.</p>
+          <button type="button" class="more more--w"><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i><span>View more</span></button>
+        </div>
+      </div>
+    </article>
+
+    <article class="kv__slide" data-dur="6000">
+      <div class="kv__media"><div class="kv__bg"><img src="../assets/img/elevator.webp" alt="엘리베이터 홀 벽감에 설치된 자판기" style="object-position:50% 46%"></div></div>
+      <div class="kv__shade"></div>
+      <div class="kv__inner">
+        <div class="kv__copy">
+          <h2 class="kv__ttl en">For Every Guest, 24h</h2>
+          <p class="kv__desc">프런트를 거치지 않아도, 늦은 밤에도.<br>투숙객은 필요한 것을 바로 찾습니다.</p>
+          <button type="button" class="more more--w"><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i><span>View more</span></button>
+        </div>
+      </div>
+    </article>
+
+    <article class="kv__slide" data-dur="6000">
+      <div class="kv__media"><div class="kv__bg"><img src="../assets/img/guest.webp" alt="가운을 입은 투숙객이 자판기에서 카드로 결제하는 뒷모습" style="object-position:50% 30%"></div></div>
+      <div class="kv__shade"></div>
+      <div class="kv__inner">
+        <div class="kv__copy">
+          <h2 class="kv__ttl en">Simple Payment</h2>
+          <p class="kv__desc">국내외 카드와 현금.<br>익숙한 방법으로 바로 결제합니다.</p>
+          <button type="button" class="more more--w"><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i><span>View more</span></button>
+        </div>
+      </div>
+    </article>
+
+    <article class="kv__slide" data-dur="6000">
+      <div class="kv__media"><div class="kv__bg"><img src="../assets/img/flatlay.webp" alt="리넨 위에 놓인 어메니티 구성" style="object-position:50% 55%"></div></div>
+      <div class="kv__shade"></div>
+      <div class="kv__inner">
+        <div class="kv__copy">
+          <h2 class="kv__ttl en">Curated Amenities</h2>
+          <p class="kv__desc">위생용품부터 스킨케어, 여행 세트까지.<br>20종 이상을 호텔에 맞게 구성합니다.</p>
+          <button type="button" class="more more--w"><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i><span>View more</span></button>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="kv__lines" aria-hidden="true"></div>
+
+  <p class="kv__scroll en" aria-hidden="true">Scroll</p>
+
+  <div class="kv__ctrl">
+    <div class="kv__dots" id="kvDots" role="tablist" aria-label="슬라이드 선택"></div>
+    <div class="kv__arrows">
+      <button type="button" class="pill pill--line pill--prev" id="kvPrev" aria-label="이전 슬라이드"><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i></button>
+      <button type="button" class="pill pill--line" id="kvNext" aria-label="다음 슬라이드"><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 2. Category ───────── -->
+<section class="sec sec--white cats" aria-label="바로가기">
+  <div class="wrap g4">
+    <button type="button" class="cat" data-to="#service">
+      <span class="cat__en en rv">Service</span>
+      <span class="cat__img ph zoom rv"><span class="ph__in"><img src="../assets/img/staff.webp" alt="" loading="lazy" decoding="async"></span></span>
+      <span class="cat__foot"><span class="cat__ko">서비스 소개</span><span class="pill"><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i></span></span>
+    </button>
+    <button type="button" class="cat" data-to="#machine">
+      <span class="cat__en en rv">Machine</span>
+      <span class="cat__img ph zoom rv"><span class="ph__in"><img src="../assets/img/machine_master.webp" alt="" loading="lazy" decoding="async"></span></span>
+      <span class="cat__foot"><span class="cat__ko">어메니티 자판기</span><span class="pill"><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i></span></span>
+    </button>
+    <button type="button" class="cat" data-to="#partners">
+      <span class="cat__en en rv">Cases</span>
+      <span class="cat__img ph zoom rv"><span class="ph__in"><img src="../assets/img/lobby_night.webp" alt="" loading="lazy" decoding="async"></span></span>
+      <span class="cat__foot"><span class="cat__ko">운영 사례</span><span class="pill"><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i></span></span>
+    </button>
+    <button type="button" class="cat" data-to="#contact">
+      <span class="cat__en en rv">Contact</span>
+      <span class="cat__img ph zoom rv"><span class="ph__in"><img src="../assets/img/frontdesk.webp" alt="" loading="lazy" decoding="async"></span></span>
+      <span class="cat__foot"><span class="cat__ko">상담 문의</span><span class="pill"><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i></span></span>
+    </button>
+  </div>
+</section>
+
+<!-- ───────── 3. Service ───────── -->
+<section class="sec sec--warm" id="service">
+  <div class="wrap g4 thead">
+    <h2 class="thead__ttl en rv">Service</h2>
+    <p class="thead__lead rv">기기를 놓아 드리는 것으로 끝나지 않습니다. <br>상품 구성과 재고 보충, 기기 점검까지 스테이드롭이 직접 방문해 운영합니다.</p>
+    <div class="thead__more"><button type="button" class="more"><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i><span>View more</span></button></div>
+  </div>
+
+  <figure class="bleed ph plx zoom clip">
+    <span class="ph__in"><img src="../assets/img/staff.webp" alt="차콜 유니폼의 스테이드롭 직원이 자판기에 상품을 보충하는 모습" loading="lazy" decoding="async" style="object-position:50% 38%"></span>
+    <span class="bleed__shade"></span>
+    <span class="circ" aria-hidden="true"><svg><use href="#i-arr"/></svg></span>
+    <figcaption class="bleed__cap">
+      <span class="bleed__en en">Direct Operation</span>
+      <strong class="bleed__ko">100% 직영 운영</strong>
+      <span class="bleed__txt">설치한 날부터 스테이드롭 직원이 직접 관리합니다.</span>
+    </figcaption>
+  </figure>
+
+  <div class="wrap g4 svc">
+    <div class="svc__a ph zoom clip"><span class="ph__in"><img src="../assets/img/frontdesk.webp" alt="밝은 프런트 데스크의 매니저" loading="lazy" decoding="async"></span></div>
+    <div class="svc__t1 txt rv">
+      <p class="txt__no en">(01)</p>
+      <h3 class="txt__ttl">호텔에서 따로<br>챙기실 일이 없습니다</h3>
+      <p class="txt__body">어떤 상품을 넣을지 정하는 일부터 재고 보충, 기기 점검까지 스테이드롭이 맡습니다. 프런트는 본래의 업무에 집중하실 수 있습니다.</p>
+    </div>
+    <div class="svc__b ph zoom clip"><span class="ph__in"><img src="../assets/img/hand.webp" alt="배출구에서 흰 파우치를 꺼내는 손" loading="lazy" decoding="async"></span></div>
+    <div class="svc__t2 txt rv">
+      <p class="txt__no en">(02)</p>
+      <h3 class="txt__ttl">월 1~2회 정기 방문</h3>
+      <p class="txt__body">담당 직원이 정기적으로 방문해 재고를 채우고 기기 상태를 살핍니다.</p>
+    </div>
+    <div class="svc__t3 txt rv">
+      <p class="txt__no en">(03)</p>
+      <h3 class="txt__ttl">100% 국산 기기</h3>
+      <p class="txt__body">국산 자판기라 고장이 적고, 부품 수급과 A/S가 빠릅니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 4. Machine ───────── -->
+<section class="sec sec--white" id="machine">
+  <div class="wrap g4 thead">
+    <h2 class="thead__ttl en rv">Machine</h2>
+    <p class="thead__lead rv">로비에도, 엘리베이터 홀에도 차분히 놓이는 원목 트림 캐비닛. <br>24시간 무인으로 판매하고, 국내외 카드와 현금을 모두 받습니다.</p>
+    <div class="thead__more"><button type="button" class="more"><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i><span>View more</span></button></div>
+  </div>
+
+  <div class="wrap g4 mach">
+    <figure class="mach__main ph plx zoom clip">
+      <span class="ph__in"><img src="../assets/img/machine_master.webp" alt="어두운 배경 앞에 선 스테이드롭 어메니티 자판기 전신" loading="lazy" decoding="async"></span>
+      <span class="circ" aria-hidden="true"><svg><use href="#i-arr"/></svg></span>
+    </figure>
+    <div class="mach__side">
+      <figure class="ph zoom clip">
+        <span class="ph__in"><img src="../assets/img/panel.webp" alt="세로 터치스크린과 카드 리더" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../assets/img/hand.webp'"></span>
+        <figcaption class="ph__cap"><span class="en">Touch Panel</span>터치스크린 · 카드 리더</figcaption>
+      </figure>
+      <figure class="ph zoom clip">
+        <span class="ph__in"><img src="../assets/img/shelf.webp" alt="유리 너머로 보이는 상품 선반" loading="lazy" decoding="async"></span>
+        <figcaption class="ph__cap"><span class="en">Shelf</span>상품 선반</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="wrap g4 spec">
+    <div class="spec__head txt rv">
+      <p class="txt__no en">Amenity Vending Machine</p>
+      <h3 class="txt__ttl">어메니티 전용<br>자동판매기</h3>
+    </div>
+    <div class="spec__desc txt rv">
+      <p class="txt__body">100% 국산 기기입니다. 유리 너머로 상품이 한눈에 보이고, 터치스크린에서 고른 뒤 카드나 현금으로 결제하면 아래 배출구로 나옵니다. 일반 220V 콘센트 하나면 설치할 수 있습니다.</p>
+    </div>
+    <dl class="spec__tbl rv">
+      <div><dt>크기</dt><dd class="en">H1840 × D850 × W760<small>mm</small></dd></div>
+      <div><dt>중량</dt><dd class="en">250<small>kg</small></dd></div>
+      <div><dt>소비전력</dt><dd class="en">75<small>W</small></dd></div>
+      <div><dt>전원</dt><dd class="en">AC220V<small>60Hz</small></dd></div>
+      <div><dt>결제</dt><dd>카드 · 현금 · 해외카드</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ───────── 5. Amenities ───────── -->
+<section class="sec sec--warm" id="amenities">
+  <div class="wrap g4 thead">
+    <h2 class="thead__ttl en rv">Amenities</h2>
+    <p class="thead__lead rv">위생용품부터 스킨케어, 여행 세트, 충전 케이블까지. <br>20종 이상의 상품 가운데 호텔에 맞는 것을 골라 채웁니다.</p>
+    <div class="thead__more"><button type="button" class="more"><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i><span>View more</span></button></div>
+  </div>
+
+  <div class="mq" id="mq">
+    <div class="mq__track" id="mqTrack">
+      <div class="mq__set">
+        <figure class="mq__item" style="--w:34;--mt:0;--ar:4/5">
+          <div class="ph zoom"><span class="ph__in"><img src="../assets/img/flatlay.webp" alt="리넨 위 어메니티 플랫레이" loading="lazy" decoding="async"></span></div>
+          <button type="button" class="pin" style="left:38%;top:42%"><i class="pin__dot"></i><span class="pin__lbl">스킨케어 · 클렌징 · 스킨로션</span></button>
+        </figure>
+        <figure class="mq__item" style="--w:56;--mt:12;--ar:16/9">
+          <div class="ph zoom"><span class="ph__in"><img src="../assets/img/products.webp" alt="어메니티 9종 라인업" loading="lazy" decoding="async"></span></div>
+          <button type="button" class="pin" style="left:30%;top:54%"><i class="pin__dot"></i><span class="pin__lbl">위생 · 칫솔 · 치약 · 면도기</span></button>
+        </figure>
+        <figure class="mq__item" style="--w:40;--mt:2;--ar:4/3">
+          <div class="ph zoom"><span class="ph__in"><img src="../assets/img/shelf.webp" alt="상품 선반" loading="lazy" decoding="async"></span></div>
+          <button type="button" class="pin" style="left:46%;top:36%"><i class="pin__dot"></i><span class="pin__lbl">20종 이상 상품 구성</span></button>
+        </figure>
+        <figure class="mq__item" style="--w:30;--mt:10;--ar:4/5">
+          <div class="ph zoom"><span class="ph__in"><img src="../assets/img/guest.webp" alt="카드로 결제하는 투숙객" loading="lazy" decoding="async"></span></div>
+          <button type="button" class="pin" style="left:22%;top:60%"><i class="pin__dot"></i><span class="pin__lbl">국내외 카드 · 현금</span></button>
+        </figure>
+        <figure class="mq__item" style="--w:48;--mt:0;--ar:16/9">
+          <div class="ph zoom"><span class="ph__in"><img src="../assets/img/hand.webp" alt="배출구에서 파우치를 꺼내는 손" loading="lazy" decoding="async"></span></div>
+          <button type="button" class="pin" style="left:40%;top:48%"><i class="pin__dot"></i><span class="pin__lbl">여행 세트 · 샤워타월</span></button>
+        </figure>
+        <figure class="mq__item" style="--w:30;--mt:6;--ar:3/4">
+          <div class="ph zoom"><span class="ph__in"><img src="../assets/img/elevator.webp" alt="엘리베이터 홀의 자판기" loading="lazy" decoding="async"></span></div>
+          <button type="button" class="pin" style="left:26%;top:44%"><i class="pin__dot"></i><span class="pin__lbl">24시간 무인 판매</span></button>
+        </figure>
+        <figure class="mq__item" style="--w:52;--mt:14;--ar:16/9">
+          <div class="ph zoom"><span class="ph__in"><img src="../assets/img/lobby_night.webp" alt="로비 야경 속 자판기" loading="lazy" decoding="async"></span></div>
+          <button type="button" class="pin" style="left:58%;top:52%"><i class="pin__dot"></i><span class="pin__lbl">충전 케이블 C타입 · 8핀</span></button>
+        </figure>
+      </div>
+      <!-- 이음매 없는 루프용 복제 세트. 스크린리더에는 숨긴다. -->
+      <div class="mq__set" aria-hidden="true">
+        <figure class="mq__item" style="--w:34;--mt:0;--ar:4/5">
+          <div class="ph zoom"><span class="ph__in"><img src="../assets/img/flatlay.webp" alt="" loading="lazy" decoding="async"></span></div>
+          <button type="button" class="pin" tabindex="-1" style="left:38%;top:42%"><i class="pin__dot"></i><span class="pin__lbl">스킨케어 · 클렌징 · 스킨로션</span></button>
+        </figure>
+        <figure class="mq__item" style="--w:56;--mt:12;--ar:16/9">
+          <div class="ph zoom"><span class="ph__in"><img src="../assets/img/products.webp" alt="" loading="lazy" decoding="async"></span></div>
+          <button type="button" class="pin" tabindex="-1" style="left:30%;top:54%"><i class="pin__dot"></i><span class="pin__lbl">위생 · 칫솔 · 치약 · 면도기</span></button>
+        </figure>
+        <figure class="mq__item" style="--w:40;--mt:2;--ar:4/3">
+          <div class="ph zoom"><span class="ph__in"><img src="../assets/img/shelf.webp" alt="" loading="lazy" decoding="async"></span></div>
+          <button type="button" class="pin" tabindex="-1" style="left:46%;top:36%"><i class="pin__dot"></i><span class="pin__lbl">20종 이상 상품 구성</span></button>
+        </figure>
+        <figure class="mq__item" style="--w:30;--mt:10;--ar:4/5">
+          <div class="ph zoom"><span class="ph__in"><img src="../assets/img/guest.webp" alt="" loading="lazy" decoding="async"></span></div>
+          <button type="button" class="pin" tabindex="-1" style="left:22%;top:60%"><i class="pin__dot"></i><span class="pin__lbl">국내외 카드 · 현금</span></button>
+        </figure>
+        <figure class="mq__item" style="--w:48;--mt:0;--ar:16/9">
+          <div class="ph zoom"><span class="ph__in"><img src="../assets/img/hand.webp" alt="" loading="lazy" decoding="async"></span></div>
+          <button type="button" class="pin" tabindex="-1" style="left:40%;top:48%"><i class="pin__dot"></i><span class="pin__lbl">여행 세트 · 샤워타월</span></button>
+        </figure>
+        <figure class="mq__item" style="--w:30;--mt:6;--ar:3/4">
+          <div class="ph zoom"><span class="ph__in"><img src="../assets/img/elevator.webp" alt="" loading="lazy" decoding="async"></span></div>
+          <button type="button" class="pin" tabindex="-1" style="left:26%;top:44%"><i class="pin__dot"></i><span class="pin__lbl">24시간 무인 판매</span></button>
+        </figure>
+        <figure class="mq__item" style="--w:52;--mt:14;--ar:16/9">
+          <div class="ph zoom"><span class="ph__in"><img src="../assets/img/lobby_night.webp" alt="" loading="lazy" decoding="async"></span></div>
+          <button type="button" class="pin" tabindex="-1" style="left:58%;top:52%"><i class="pin__dot"></i><span class="pin__lbl">충전 케이블 C타입 · 8핀</span></button>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap mq__bar">
+    <button type="button" class="mq__pause" id="mqPause" aria-pressed="false" aria-label="갤러리 흐름 일시정지"><i></i></button>
+  </div>
+
+  <div class="wrap g4 kinds">
+    <div class="kind txt rv">
+      <p class="txt__no en">Hygiene</p>
+      <h3 class="txt__ttl">위생</h3>
+      <p class="txt__body">칫솔 · 치약 · 면도기<br>생리대 · 물티슈</p>
+    </div>
+    <div class="kind txt rv">
+      <p class="txt__no en">Skincare</p>
+      <h3 class="txt__ttl">스킨케어</h3>
+      <p class="txt__body">클렌징 · 스킨로션<br>폼클렌징</p>
+    </div>
+    <div class="kind txt rv">
+      <p class="txt__no en">Travel</p>
+      <h3 class="txt__ttl">여행</h3>
+      <p class="txt__body">여행 세트<br>샤워타월</p>
+    </div>
+    <div class="kind txt rv">
+      <p class="txt__no en">Convenience</p>
+      <h3 class="txt__ttl">편의 · 전자</h3>
+      <p class="txt__body">충전 케이블 C타입 / 8핀<br>세탁세제 외</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 6. Plan ───────── -->
+<section class="sec sec--white" id="plan">
+  <div class="wrap g4 thead">
+    <h2 class="thead__ttl en rv">Plan</h2>
+    <p class="thead__lead rv">호텔의 규모와 운영 방식에 맞춰 세 가지 계약 모델 가운데 고르실 수 있습니다. <br>수익쉐어와 고정임대는 기기비와 설치비가 없습니다.</p>
+    <div class="thead__more"><button type="button" class="more"><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i><span>View more</span></button></div>
+  </div>
+
+  <div class="wrap g4 plans">
+    <div class="plans__labels" aria-hidden="true">
+      <div class="plans__lhead"><span class="en">Contract</span>계약 모델 3가지</div>
+      <div>비용</div>
+      <div>운영</div>
+      <div>방식</div>
+    </div>
+    <article class="plan rv">
+      <header class="plan__head"><span class="plan__no en">(01)</span><h3 class="plan__ttl">수익쉐어</h3><span class="plan__en en">Revenue Share</span></header>
+      <dl>
+        <div><dt>비용</dt><dd>기기비 · 설치비 0원</dd></div>
+        <div><dt>운영</dt><dd>스테이드롭 직영</dd></div>
+        <div><dt>방식</dt><dd>판매 매출을 약정한 비율로 나눕니다.</dd></div>
+      </dl>
+    </article>
+    <article class="plan rv">
+      <header class="plan__head"><span class="plan__no en">(02)</span><h3 class="plan__ttl">고정임대</h3><span class="plan__en en">Fixed Lease</span></header>
+      <dl>
+        <div><dt>비용</dt><dd>기기비 · 설치비 0원</dd></div>
+        <div><dt>운영</dt><dd>스테이드롭 직영</dd></div>
+        <div><dt>방식</dt><dd>판매량과 관계없이 정해진 금액을 호텔이 받습니다.</dd></div>
+      </dl>
+    </article>
+    <article class="plan rv">
+      <header class="plan__head"><span class="plan__no en">(03)</span><h3 class="plan__ttl">렌탈</h3><span class="plan__en en">Rental</span></header>
+      <dl>
+        <div><dt>비용</dt><dd>월 렌탈료</dd></div>
+        <div><dt>운영</dt><dd>호텔 직접 운영</dd></div>
+        <div><dt>방식</dt><dd>기기를 빌려 호텔이 직접 운영합니다.</dd></div>
+      </dl>
+    </article>
+  </div>
+</section>
+
+<!-- ───────── 7. Brand Story ───────── -->
+<section class="sec sec--ivory" id="story">
+  <div class="wrap g4 story">
+    <figure class="story__main ph plx zoom clip"><span class="ph__in"><img src="../assets/img/elevator.webp" alt="따뜻한 저녁빛의 엘리베이터 홀, 벽감 속 자판기" loading="lazy" decoding="async"></span></figure>
+    <div class="story__text txt">
+      <p class="story__label en rv">Brand Story</p>
+      <h2 class="story__ttl rv">머무는 시간을<br>조금 더 편안하게</h2>
+      <p class="story__body rv">2024년 3월 29일부터 객실 50실 이상의 숙박업소는 칫솔과 치약, 샴푸, 린스, 면도기 같은 일회용품을 무상으로 제공할 수 없게 되었습니다. 위반하면 최대 300만 원의 과태료가 부과됩니다.</p>
+      <p class="story__body rv">투숙객의 불편과 프런트의 부담 사이, 스테이드롭은 자판기 한 대로 그 빈자리를 채웁니다. 설치부터 운영까지 맡아, 호텔이 본연의 환대에 집중하실 수 있도록 돕습니다.</p>
+      <button type="button" class="more rv"><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i><span>View more</span></button>
+    </div>
+    <figure class="story__s1 ph zoom clip"><span class="ph__in"><img src="../assets/img/flatlay.webp" alt="리넨 위의 어메니티" loading="lazy" decoding="async" style="object-position:50% 60%"></span></figure>
+    <figure class="story__s2 ph zoom clip"><span class="ph__in"><img src="../assets/img/guest.webp" alt="가운을 입은 투숙객의 뒷모습" loading="lazy" decoding="async"></span></figure>
+  </div>
+</section>
+
+<!-- ───────── 8. Full-width video ───────── -->
+<section class="full" id="full" aria-label="스테이드롭의 약속">
+  <div class="full__media ph plx">
+    <span class="ph__in">
+      <video class="full__video" muted loop playsinline preload="none" poster="../assets/img/lobby_day.webp" aria-hidden="true">
+        <source src="../assets/video/hero_lobby.mp4" type="video/mp4">
+      </video>
+    </span>
+  </div>
+  <div class="full__shade"></div>
+  <div class="full__lines" aria-hidden="true"></div>
+  <div class="full__inner">
+    <h2 class="full__ttl rv">호텔은 그대로, <br class="sp">나머지는 스테이드롭이.</h2>
+    <p class="full__en en rv">Nothing changes for your hotel.<br>We take care of the rest.</p>
+    <button type="button" class="more more--w rv"><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i><span>View more</span></button>
+  </div>
+</section>
+
+<!-- ───────── 9. Partners ───────── -->
+<section class="sec sec--warm" id="partners">
+  <div class="wrap g4 part">
+    <div class="part__head">
+      <h2 class="thead__ttl en rv">Partners</h2>
+      <p class="part__lead rv">스테이드롭의 자판기가 설치되어<br>운영 중인 호텔입니다.</p>
+    </div>
+    <ul class="part__grid">
+      <li class="rv"><span class="en">01</span><strong>서울 성수 S 호텔</strong></li>
+      <li class="rv"><span class="en">02</span><strong>부산 해운대 H 호텔</strong></li>
+      <li class="rv"><span class="en">03</span><strong>제주 애월 O 리조트</strong></li>
+      <li class="rv"><span class="en">04</span><strong>강릉 안목 B 호텔</strong></li>
+      <li class="rv"><span class="en">05</span><strong>인천 송도 G 호텔</strong></li>
+      <li class="rv"><span class="en">06</span><strong>여수 돌산 M 리조트</strong></li>
+      <li class="rv"><span class="en">07</span><strong>대전 둔산 L 호텔</strong></li>
+      <li class="rv"><span class="en">08</span><strong>평창 진부 R 리조트</strong></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ───────── 10. Process / FAQ ───────── -->
+<section class="sec sec--white" id="process">
+  <div class="wrap g4 lst">
+    <div class="lst__head">
+      <h2 class="thead__ttl en rv">Process</h2>
+      <p class="part__lead rv">상담부터 운영 시작까지<br>네 단계로 진행합니다.</p>
+    </div>
+    <ol class="lst__body">
+      <li class="rv"><span class="lst__no en">01</span><strong class="lst__ttl">상담 신청</strong><span class="lst__txt">전화나 문의 양식으로 호텔 정보를 남겨 주십시오.</span></li>
+      <li class="rv"><span class="lst__no en">02</span><strong class="lst__ttl">설치 장소 확인</strong><span class="lst__txt">로비, 엘리베이터 홀 등 동선에 맞는 자리를 함께 확인합니다.</span></li>
+      <li class="rv"><span class="lst__no en">03</span><strong class="lst__ttl">상품 구성 · 설치</strong><span class="lst__txt">호텔에 맞는 상품을 구성하고 기기를 설치합니다.</span></li>
+      <li class="rv"><span class="lst__no en">04</span><strong class="lst__ttl">운영 시작</strong><span class="lst__txt">이후에는 스테이드롭이 정기적으로 방문해 운영합니다.</span></li>
+    </ol>
+    <div class="lst__more"><button type="button" class="more"><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i><span>View more</span></button></div>
+  </div>
+
+  <div class="wrap g4 lst lst--faq" id="faq">
+    <div class="lst__head">
+      <h2 class="thead__ttl en rv">FAQ</h2>
+      <p class="part__lead rv">자주 묻는 질문</p>
+    </div>
+    <div class="lst__body faq">
+      <div class="faq__item rv">
+        <h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq1"><span class="lst__no en">Q1</span><span class="faq__qt">설치 비용이 드나요?</span><i class="faq__ico"><svg><use href="#i-plus"/></svg></i></button></h3>
+        <div class="faq__a" id="faq1"><div><p>수익쉐어·고정임대 방식은 기기비와 설치비가 없습니다.</p></div></div>
+      </div>
+      <div class="faq__item rv">
+        <h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq2"><span class="lst__no en">Q2</span><span class="faq__qt">어떤 상품을 판매할 수 있나요?</span><i class="faq__ico"><svg><use href="#i-plus"/></svg></i></button></h3>
+        <div class="faq__a" id="faq2"><div><p>위생·스킨케어·여행·전자 20종 이상 가운데 호텔에 맞게 구성합니다.</p></div></div>
+      </div>
+      <div class="faq__item rv">
+        <h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq3"><span class="lst__no en">Q3</span><span class="faq__qt">재고 관리는 어떻게 하나요?</span><i class="faq__ico"><svg><use href="#i-plus"/></svg></i></button></h3>
+        <div class="faq__a" id="faq3"><div><p>스테이드롭 직원이 월 1~2회 방문해 보충하고 점검합니다.</p></div></div>
+      </div>
+      <div class="faq__item rv">
+        <h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq4"><span class="lst__no en">Q4</span><span class="faq__qt">카드와 현금 결제가 모두 되나요?</span><i class="faq__ico"><svg><use href="#i-plus"/></svg></i></button></h3>
+        <div class="faq__a" id="faq4"><div><p>국내외 카드와 현금 모두 됩니다.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 11. Discover More ───────── -->
+<section class="sec sec--dark disc" id="discover">
+  <div class="disc__bg ph plx"><span class="ph__in"><img src="../assets/img/lobby_night.webp" alt="" loading="lazy" decoding="async"></span></div>
+  <div class="disc__shade"></div>
+  <div class="wrap">
+    <h2 class="disc__ttl en rv">Discover More</h2>
+  </div>
+  <div class="wrap g4 disc__grid">
+    <button type="button" class="disc__cell" data-to="#contact">
+      <span class="disc__no en">(01)</span>
+      <span class="disc__foot"><span class="disc__name"><strong>도입 상담</strong><span class="en">Consultation</span></span><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i></span>
+    </button>
+    <button type="button" class="disc__cell" data-to="#partners">
+      <span class="disc__no en">(02)</span>
+      <span class="disc__foot"><span class="disc__name"><strong>설치 사례</strong><span class="en">Cases</span></span><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i></span>
+    </button>
+    <button type="button" class="disc__cell" data-to="#amenities">
+      <span class="disc__no en">(03)</span>
+      <span class="disc__foot"><span class="disc__name"><strong>상품 구성</strong><span class="en">Amenities</span></span><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i></span>
+    </button>
+    <button type="button" class="disc__cell" data-to="#faq">
+      <span class="disc__no en">(04)</span>
+      <span class="disc__foot"><span class="disc__name"><strong>자주 묻는 질문</strong><span class="en">FAQ</span></span><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i></span>
+    </button>
+  </div>
+</section>
+
+</main>
+
+<!-- ───────── 12. Contact + Footer ───────── -->
+<footer class="sec sec--foot ftr" id="contact">
+  <div class="wrap g4 ctc">
+    <div class="ctc__info">
+      <h2 class="thead__ttl en rv">Contact</h2>
+      <p class="ctc__lead rv">객실 수와 설치를 생각하시는 자리를 알려 주시면 <br>호텔에 맞는 구성으로 안내해 드리겠습니다.</p>
+      <p class="ctc__tel en rv">02-555-0123</p>
+      <dl class="ctc__sub rv">
+        <div><dt class="en">Mobile</dt><dd class="en">010-2345-6789</dd></div>
+        <div><dt class="en">E-mail</dt><dd class="en">hello@staydrop.kr</dd></div>
+      </dl>
+    </div>
+    <form class="ctc__form rv" id="ctcForm" novalidate>
+      <label class="fld"><span>호텔명</span><input type="text" name="hotel" autocomplete="organization"></label>
+      <label class="fld"><span>담당자</span><input type="text" name="name" autocomplete="name"></label>
+      <label class="fld"><span>연락처</span><input type="tel" name="tel" autocomplete="tel"></label>
+      <label class="fld"><span>객실 수</span><input type="text" name="rooms" inputmode="numeric"></label>
+      <div class="ctc__submit">
+        <p class="ctc__note" id="ctcNote" role="status" aria-live="polite"></p>
+        <button type="submit" class="ctc__btn"><span>상담 신청하기</span><span class="pill pill--white"><i class="arr"><svg><use href="#i-arr"/></svg><svg><use href="#i-arr"/></svg></i></span></button>
+      </div>
+    </form>
+  </div>
+
+  <div class="wrap ftr__bar">
+    <div class="logo logo--ftr" aria-label="스테이드롭 STAYDROP">
+      <span class="logo__mark">SD</span>
+      <span class="logo__txt">STAYDROP AMENITY</span>
+    </div>
+    <p class="ftr__info">(주)스테이드롭 · 서울 성동구 · 본 사이트는 탱탱소프트 제작 샘플이며, 업체 정보는 가상입니다<br>Tel 02-555-0123 · 010-2345-6789 · hello@staydrop.kr</p>
+    <p class="ftr__copy en">© STAYDROP AMENITY</p>
+  </div>
+
+  <button type="button" class="pagetop en" id="pageTop"><span>Page Top</span></button>
+</footer>
+
+<!-- 우측 고정 바로가기 탭 -->
+<button type="button" class="qtab" id="qtab" data-to="#contact" aria-label="도입 상담 바로가기 02-555-0123">
+  <span class="qtab__ico"><svg><use href="#i-phone"/></svg></span>
+  <span class="qtab__txt"><span>도입 상담</span><strong class="en">02-555-0123</strong></span>
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
