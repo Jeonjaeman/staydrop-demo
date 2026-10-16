@@ -1,2 +1,5 @@
 assets/src/
 rebrand.py
+.omc/
+**/.omc/
+.nojekyll.bak
